@@ -2,9 +2,15 @@
 
 Various UEFI utilities built against UDK2017
 
-Create a subdirectory immediately under UDK2017 called MyApps, populate MyApps with one or more of the utilities, fix up MyApps.dsc to build the utility or utilities.
+To integrate into UDK2017 source tree:
+
+  Create a subdirectory immediately under UDK2017 called MyApps, populate MyApps with one or more of the 
+  utilities, fix up MyApps.dsc to build the required utility or utilities by uncommening one or more .inf
+  lines.
 
 Note these utilities have only been built and tested on an X64 platform.
+
+I now include a 64-bit EFI binary of each utility in each utility subdirectory.
 
 See http://blog.fpmurphy.com for detailed information about the utilities.
 
