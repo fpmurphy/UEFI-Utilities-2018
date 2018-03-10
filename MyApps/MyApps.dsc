@@ -72,3 +72,4 @@
   # MyApps/ShowSLIC/ShowSLIC.inf
   # MyApps/ShowFACS/ShowFACS.inf
   # MyApps/ListACPI/ListACPI.inf
+  # MyApps/ShowEDID/ShowEDID.inf
