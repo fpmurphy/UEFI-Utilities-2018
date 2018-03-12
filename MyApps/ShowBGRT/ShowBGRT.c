@@ -26,7 +26,7 @@
 #include <Guid/Acpi.h>
 #include <IndustryStandard/Bmp.h>
 
-#define UTILITY_VERSION L"20180221"
+#define UTILITY_VERSION L"20180307"
 #undef DEBUG
 
 
@@ -43,6 +43,7 @@ typedef struct {
 } EFI_ACPI_BGRT;
 #pragma pack()
 
+// for option setting
 typedef enum {
    Verbose = 1,
    Hexdump,
@@ -277,14 +278,25 @@ ParseRSDP( EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER *Rsdp,
            MODE Mode )
 {
     EFI_ACPI_SDT_HEADER *Xsdt, *Entry;
+#if 0
     CHAR16 OemStr[20];
+#endif
     UINT32 EntryCount;
     UINT64 *EntryPtr;
 
+#ifdef DEBUG
+    Print(L"\n\nACPI GUID: %s\n", GuidStr);
+#endif
+
+#if 0
     AsciiToUnicodeSize((CHAR8 *)(Rsdp->OemId), 6, OemStr, FALSE);
+#endif
     if (Rsdp->Revision >= EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER_REVISION) {
         Xsdt = (EFI_ACPI_SDT_HEADER *)(Rsdp->XsdtAddress);
     } else {
+#ifdef DEBUG
+        Print(L"ERROR: RSDP table < revision ACPI 2.0 found.\n");
+#endif
         return 1;
     }
 
@@ -292,7 +304,9 @@ ParseRSDP( EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER *Rsdp,
         return 1;
     }
 
+#if 0
     AsciiToUnicodeSize((CHAR8 *)(Xsdt->OemId), 6, OemStr, FALSE);
+#endif
     EntryCount = (Xsdt->Length - sizeof (EFI_ACPI_SDT_HEADER)) / sizeof(UINT64);
 
     EntryPtr = (UINT64 *)(Xsdt + 1);
@@ -310,9 +324,10 @@ ParseRSDP( EFI_ACPI_2_0_ROOT_SYSTEM_DESCRIPTION_POINTER *Rsdp,
 static void
 Usage( void )
 {
-    Print(L"Usage: ShowBGRT [-v | --verbose] [ -s | --save]\n");
-    Print(L"       ShowBGRT [-V | --version]\n");
+    Print(L"Usage: ShowBGRT [-v | --verbose]\n");
+    Print(L"       ShowBGRT [-s | --save]\n");
     Print(L"       ShowBGRT [-d | --dump]\n");
+    Print(L"       ShowBGRT [-V | --version]\n");
 }
 
 

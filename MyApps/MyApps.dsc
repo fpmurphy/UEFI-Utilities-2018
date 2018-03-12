@@ -73,3 +73,4 @@
   # MyApps/ShowFACS/ShowFACS.inf
   # MyApps/ListACPI/ListACPI.inf
   # MyApps/ShowEDID/ShowEDID.inf
+  # MyApps/ShowBGRT/ShowBGRT.inf
