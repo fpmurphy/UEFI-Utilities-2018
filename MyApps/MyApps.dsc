@@ -74,3 +74,4 @@
   # MyApps/ListACPI/ListACPI.inf
   # MyApps/ShowEDID/ShowEDID.inf
   # MyApps/ShowBGRT/ShowBGRT.inf
+  # MyApps/ShowESRT/ShowESRT.inf
