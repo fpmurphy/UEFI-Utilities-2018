@@ -76,7 +76,8 @@
   # MyApps/ShowEDID/ShowEDID.inf
   # MyApps/ShowBGRT/ShowBGRT.inf
   # MyApps/ShowESRT/ShowESRT.inf
-  #  MyApps/ShellOpt/ShellOpt.inf
+  # MyApps/ShellOpt/ShellOpt.inf
   # MyApps/ShowOsIndications/ShowOsIndications.inf
   # MyApps/BootFWUI/BootFWUI.inf
-  MyApps/ShowQVI/ShowQVI.inf
+  # MyApps/ShowQVI/ShowQVI.inf
+  # MyApps/ShowPCI/ShowPCI.inf
