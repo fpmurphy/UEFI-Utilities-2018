@@ -67,6 +67,7 @@
 [Components]
 
 #### Applications
+  # MyApps/HelloWorld/HelloWorld.inf
   # MyApps/ShowMSDM/ShowMSDM.inf
   # MyApps/ListCerts/ListCerts.inf
   # MyApps/ShowSLIC/ShowSLIC.inf
@@ -75,5 +76,7 @@
   # MyApps/ShowEDID/ShowEDID.inf
   # MyApps/ShowBGRT/ShowBGRT.inf
   # MyApps/ShowESRT/ShowESRT.inf
+  #  MyApps/ShellOpt/ShellOpt.inf
   # MyApps/ShowOsIndications/ShowOsIndications.inf
   # MyApps/BootFWUI/BootFWUI.inf
+  MyApps/ShowQVI/ShowQVI.inf
