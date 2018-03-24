@@ -81,3 +81,4 @@
   # MyApps/BootFWUI/BootFWUI.inf
   # MyApps/ShowQVI/ShowQVI.inf
   # MyApps/ShowPCI/ShowPCI.inf
+  # MyApps/Beep/Beep.inf
