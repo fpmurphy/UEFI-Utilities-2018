@@ -82,3 +82,4 @@
   # MyApps/ShowQVI/ShowQVI.inf
   # MyApps/ShowPCI/ShowPCI.inf
   # MyApps/Beep/Beep.inf
+  # MyApps/XBeep/XBeep.inf
