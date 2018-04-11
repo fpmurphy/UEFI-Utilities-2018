@@ -4,10 +4,11 @@
 //  Show PCI devices
 //
 //  License: UDK2015 license applies to code from UDK2015 source,
-//           BSD 2 cluase license applies to all other code.
+//           BSD 2 clause license applies to all other code.
 //
 
 #include <Uefi.h>
+
 #include <Library/UefiLib.h>
 #include <Library/ShellCEntryLib.h>
 #include <Library/ShellLib.h>
@@ -45,7 +46,7 @@ typedef struct {
 typedef struct {
    UINT32  Bar[6];               // Base Address Registers
    UINT32  CISPtr;               // CardBus CIS Pointer
-   UINT16  SubsystemVendorId;    // Subsystem Vendor ID
+   UINT16  SubsystemVendorID;    // Subsystem Vendor ID
    UINT16  SubsystemID;          // Subsystem ID
    UINT32  ExpansionRomBar;      // Expansion ROM Base Address
    UINT8   CapabilityPtr;        // Capabilities Pointer
@@ -163,13 +164,12 @@ PciGetProtocolAndResource( EFI_HANDLE Handle,
 
 
 VOID
-Usage( CHAR16 *Str, 
-       BOOLEAN ErrorMsg )
+Usage( BOOLEAN ErrorMsg )
 {
     if ( ErrorMsg ) {
         Print(L"ERROR: Unknown option.\n");
     }
-    Print(L"Usage: %s [-V | --version]\n", Str);
+    Print(L"Usage: ShowPCI [-V | --version]\n");
 }
 
 
@@ -201,15 +201,15 @@ ShellAppMain( UINTN Argc,
             return Status;
         } else if (!StrCmp(Argv[1], L"--help") ||
             !StrCmp(Argv[1], L"-h")) {
-            Usage(Argv[0], FALSE);
+            Usage(FALSE);
             return Status;
         } else {
-            Usage(Argv[0], TRUE);
+            Usage(TRUE);
             return Status;
         }
     }
     if (Argc > 2) {
-        Usage(Argv[0], TRUE);
+        Usage(TRUE);
         return Status;
     }
  
@@ -233,10 +233,12 @@ ShellAppMain( UINTN Argc,
                                 &gEfiPciRootBridgeIoProtocolGuid,
                                 NULL,
                                 &HandleBufSize,
-                                HandleBuf);
+                                HandleBuf );
 
     if (Status == EFI_BUFFER_TOO_SMALL) {
-        HandleBuf = ReallocatePool (sizeof (EFI_HANDLE), HandleBufSize, HandleBuf);
+        HandleBuf = ReallocatePool( sizeof (EFI_HANDLE), 
+                                    HandleBufSize, 
+                                    HandleBuf );
         if (HandleBuf == NULL) {
             Print(L"ERROR: Out of memory resources\n");
             Status = EFI_OUT_OF_RESOURCES;
@@ -247,7 +249,7 @@ ShellAppMain( UINTN Argc,
                                     &gEfiPciRootBridgeIoProtocolGuid,
                                     NULL,
                                     &HandleBufSize,
-                                    HandleBuf);
+                                    HandleBuf );
     }
 
     if (EFI_ERROR (Status)) {
@@ -260,14 +262,17 @@ ShellAppMain( UINTN Argc,
     for (UINT16 Index = 0; Index < HandleCount; Index++) {
         Status = PciGetProtocolAndResource( HandleBuf[Index],
                                             &IoDev,
-                                            &Descriptors);
+                                            &Descriptors );
         if (EFI_ERROR(Status)) {
             Print(L"ERROR: PciGetProtocolAndResource [%d]\n, Status");
             goto Done;
         }
   
         while(TRUE) {
-            Status = PciGetNextBusRange( &Descriptors, &MinBus, &MaxBus, &IsEnd);
+            Status = PciGetNextBusRange( &Descriptors, 
+                                         &MinBus, 
+                                         &MaxBus, 
+                                         &IsEnd );
             if (EFI_ERROR(Status)) {
                 Print(L"ERROR: Retrieving PCI bus range [%d]\n", Status);
                 goto Done;
@@ -290,7 +295,7 @@ ShellAppMain( UINTN Argc,
                                                    EfiPciWidthUint8,
                                                    Address,
                                                    sizeof(ConfigSpace),
-                                                   &ConfigSpace);
+                                                   &ConfigSpace );
 
                          DeviceHeader = (PCI_DEVICE_HEADER_TYPE_REGION *) &(ConfigSpace.NonCommon.Device);
 
