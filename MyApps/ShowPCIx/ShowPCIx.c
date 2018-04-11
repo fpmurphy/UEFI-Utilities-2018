@@ -4,7 +4,7 @@
 //  Show PCI devices using PCI.IDS text-based database
 //
 //  License: UDK2015 license applies to code from UDK2015 source, 
-//           BSD 2 cluase license applies to all other code.
+//           BSD 2 clause license applies to all other code.
 //
 //  Requires pci.ids database from https://pci-ids.ucw.cz/ 
 //
