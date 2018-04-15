@@ -85,3 +85,4 @@
   # MyApps/XBeep/XBeep.inf
   # MyApps/Cpuid/Cpuid.inf
   # MyApps/GraphicModes/GraphicModes.inf
+  # MyApps/DisplayBMP/DisplayBMP.inf
