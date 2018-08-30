@@ -76,13 +76,21 @@
   # MyApps/ShowEDID/ShowEDID.inf
   # MyApps/ShowBGRT/ShowBGRT.inf
   # MyApps/ShowESRT/ShowESRT.inf
-  # MyApps/ShellOpt/ShellOpt.inf
+  #  MyApps/ShellOpt/ShellOpt.inf
   # MyApps/ShowOsIndications/ShowOsIndications.inf
   # MyApps/BootFWUI/BootFWUI.inf
   # MyApps/ShowQVI/ShowQVI.inf
   # MyApps/ShowPCI/ShowPCI.inf
+  #  MyApps/ShowERST/ShowERST.inf
+  #  MyApps/LegacySpeaker/LegacySpeaker.inf
   # MyApps/Beep/Beep.inf
   # MyApps/XBeep/XBeep.inf
+  # MyApps/ShowPCIx/ShowPCIx.inf
   # MyApps/Cpuid/Cpuid.inf
   # MyApps/GraphicModes/GraphicModes.inf
-  # MyApps/DisplayBMP/DisplayBMP.inf
+  #  `MyApps/DisplayBMP/DisplayBMP.inf
+  # MyApps/ShowHII/ShowHII.inf
+  # MyApps/ShowTPM2/ShowTPM2.inf
+  # MyApps/ShowTCM20/ShowTCM20.inf
+  # MyApps/ShowPCR20/ShowPCR20.inf
+  MyApps/ShowPCR12/ShowPCR12.inf
