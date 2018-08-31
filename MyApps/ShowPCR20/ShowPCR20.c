@@ -3,8 +3,8 @@
 //
 //  Retrieve and print TPM 2.0 PCR digests 
 //
-//  License: UDK2017 license applies to code from UDK2017 sources,
-//           Intel license, shown below, applies to routines from tpm2.0-tools. 
+//  License: UDK2017 license applies to code from UDK2017 sources.
+//           Intel license, shown below, applies to routines from tpm2.0-tools (tpm_*). 
 //           BSD 2 clause license applies to all other code.
 //
 //  Routines containing an underbar in the name were ported from Intel Open Source Technology 
@@ -90,18 +90,16 @@ typedef struct {
 } tpm2_algorithm; 
 
 tpm2_algorithm algs[] = { 
-    { TPM_ALG_SHA1, L"TPM_ALG_SHA1", FALSE }, 
-    { TPM_ALG_SHA256, L"TPM_ALG_SHA256", FALSE },
-    { TPM_ALG_SHA384, L"TPM_ALG_SHA384", FALSE },
-    { TPM_ALG_SHA512, L"TPM_ALG_SHA512", FALSE }, 
+    { TPM_ALG_SHA1,    L"TPM_ALG_SHA1", FALSE }, 
+    { TPM_ALG_SHA256,  L"TPM_ALG_SHA256", FALSE },
+    { TPM_ALG_SHA384,  L"TPM_ALG_SHA384", FALSE },
+    { TPM_ALG_SHA512,  L"TPM_ALG_SHA512", FALSE }, 
     { TPM_ALG_SM3_256, L"TPM_ALG_SM3_256", FALSE }, 
-    { TPM_ALG_NULL, L"TPM_ALG_UNKNOWN", FALSE }
+    { TPM_ALG_NULL,    L"TPM_ALG_UNKNOWN", FALSE }
 };
 
-
-// prototypes
-EFI_STATUS Tpm2PcrRead ( TPML_PCR_SELECTION *, UINT32 *, TPML_PCR_SELECTION  *, TPML_DIGEST *);
-
+// prototype
+EFI_STATUS Tpm2PcrRead( TPML_PCR_SELECTION *, UINT32 *, TPML_PCR_SELECTION  *, TPML_DIGEST * );
 
 EFI_TCG2_PROTOCOL *Tcg2Protocol;
 
