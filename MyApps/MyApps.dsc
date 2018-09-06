@@ -93,5 +93,6 @@
   # MyApps/ShowTPM2/ShowTPM2.inf
   # MyApps/ShowTCM20/ShowTCM20.inf
   # MyApps/ShowPCR20/ShowPCR20.inf
-  #   MyApps/ShowPCR12/ShowPCR12.inf
-  MyApps/GenTPM12RN/GenTPM12RN.inf
+  # MyApps/ShowPCR12/ShowPCR12.inf
+  # MyApps/GenTPM12RN/GenTPM12RN.inf
+  MyApps/ShowTrEE/ShowTrEE.inf
