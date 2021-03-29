@@ -8,6 +8,11 @@ To integrate into UDK2017 source tree:
   utilities, fix up MyApps.dsc to build the required utility or utilities by uncommening one or more .inf
   lines.
 
+Or you can just build the tools using docker:
+```
+make
+```
+
 Note these utilities have only been built and tested on an X64 platform.
 
 I now include a 64-bit EFI binary of each utility in each utility subdirectory.
